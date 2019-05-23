@@ -1,0 +1,275 @@
+<html lang="en">
+<head>
+  
+    <title>ZIPs 1/n :: 0x41 — Another tech blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="ZIPs are shit period
+ According to wikipedia : ZIP is an archive file format that supports lossless data compression. A ZIP file may contain one or more files or directories that may have been compressed.
+Official specification of ZIP format by PKWARE : APPNOTE.TXT
+ZIPs! They are everywhere. Not only .zip but .xlsx, .docx, .pptx, ODF files, .jar, .apk, python .whl and .egg files, flash files, some .dat files of games, ."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="http://nk521.github.io/posts/1/" />
+<base href="/">
+
+<link rel="stylesheet" href="http://nk521.github.io/assets/style.css" type="text/css">
+
+  <link rel="stylesheet" href="http://nk521.github.io/assets/blue.css" type="text/css">
+
+
+
+<link rel="stylesheet" href="http://nk521.github.io/style.css" type="text/css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://nk521.github.io/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="http://nk521.github.io/img/favicon/blue.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="ZIPs 1/n :: 0x41 — Another tech blog" />
+<meta name="twitter:description" content="ZIPs are shit period
+ According to wikipedia : ZIP is an archive file format that supports lossless data compression. A ZIP file may contain one or more files or directories that may have been compressed.
+Official specification of ZIP format by PKWARE : APPNOTE.TXT
+ZIPs! They are everywhere. Not only .zip but .xlsx, .docx, .pptx, ODF files, .jar, .apk, python .whl and .egg files, flash files, some .dat files of games, ." />
+<meta name="twitter:site" content="http://nk521.github.io/" />
+<meta name="twitter:creator" content="Mason" />
+<meta name="twitter:image" content="http://nk521.github.io/zip.png">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="ZIPs 1/n :: 0x41 — Another tech blog">
+<meta property="og:description" content="ZIPs are shit period
+ According to wikipedia : ZIP is an archive file format that supports lossless data compression. A ZIP file may contain one or more files or directories that may have been compressed.
+Official specification of ZIP format by PKWARE : APPNOTE.TXT
+ZIPs! They are everywhere. Not only .zip but .xlsx, .docx, .pptx, ODF files, .jar, .apk, python .whl and .egg files, flash files, some .dat files of games, ." />
+<meta property="og:url" content="http://nk521.github.io/posts/1/" />
+<meta property="og:site_name" content="ZIPs 1/n" />
+<meta property="og:image" content="http://nk521.github.io/zip.png">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2019-05-22 21:49:00 &#43;0530 DST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    0x41
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">some BS</a></li>
+        
+      
+        
+          <li><a href="/about">whoami</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">some BS</a></li>
+      
+    
+      
+        <li><a href="/about">whoami</a></li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="http://nk521.github.io/posts/1/">ZIPs 1/n</a></h1>
+  <div class="post-meta">
+    <span class="post-date">
+      Wednesday, May 22, 2019
+    </span>
+    
+    <span class="post-author">::
+      Mason
+    </span>
+    
+  </div>
+
+  
+
+  
+  <img src="http://nk521.github.io/zip.png" class="post-cover" />
+  
+
+  <div class="post-content">
+    <blockquote>
+<p>ZIPs are shit period</p>
+</blockquote>
+
+<p>According to wikipedia : <code>ZIP is an archive file format that supports lossless data compression. A ZIP file may contain one or more files or directories that may have been compressed.</code></p>
+
+<p>Official specification of ZIP format by <a href="https://en.wikipedia.org/wiki/PKWARE,_Inc.">PKWARE</a> : <a href="https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT">APPNOTE.TXT</a></p>
+
+<p>ZIPs! They are everywhere. Not only .zip but .xlsx, .docx, .pptx, ODF files, <a href="https://en.wikipedia.org/wiki/JAR_(file_format)">.jar</a>, .apk, python .whl and .egg files, flash files, some .dat files of games, .phar, et cetra SMH!</p>
+
+<p>This list is never ending tbh.</p>
+
+<p>So, let&rsquo;s start by learning about ZIP file format! The format is from 1989 and it&rsquo;s not like all other &ldquo;normal&rdquo; file types. I&rsquo;d say that it&rsquo;s a <code>pointer</code> file type (WHY? Just keep on reading!). ZIP parsing starts from the end of the file and it&rsquo;s the trivial way of parsing ZIPs. We have atleast 3 headers in a ZIP file (You find it weird? Well IKR? :P) and every header starts from the letter <code>PK</code> followed by 2 hex bytes.</p>
+
+<p>Basic structure is somewhat like this :</p>
+
+<pre><code>      [local file header 1]
+      [encryption header 1]
+      [file data 1]
+      [data descriptor 1]
+      . 
+      .
+      .
+      [local file header n]
+
+      [central directory header 1]
+      .
+      .
+      .
+      [central directory header n]
+
+      [end of central directory record]
+</code></pre>
+
+<p>The story of parsing a ZIP using the trivial method starts from the bottom or end of the file. The parer will first parse EoCDH (End of Central Directory Header). The EoCDH looks like this :</p>
+
+<pre><code class="language-c">struct EndOfCentralDirectory
+{
+	// signature for EoCDH is : 0x06054B50
+    WORD  DiskNumber ;
+    WORD  CentralDirectoryStartDisk ;
+    WORD  CentralDirectoryStartOffset ;
+    WORD  NumEntries ;
+    DWORD CentralDirectorySize ;
+    DWORD CentralDirectoryOffset ; // with respect to the starting disk number
+    WORD  ZipCommentLength ;
+    char  ZipComment[ZipCommentLength] ; //variable size
+} ;
+</code></pre>
+
+<p>You see it stores the offset for the second header called the Central Directory Header (CDH). CDH looks something like this :</p>
+
+<pre><code class="language-c">struct CentralDirectoryFileHeader
+{
+	// signature for the CDH is : 0x02014b50
+    WORD VersionMadeBy ;
+    WORD VersionNeededToExtract ;
+    WORD GeneralPurposeBitFlag ;
+    WORD CompressionMethod ;
+    WORD LastModFileTime ;
+    WORD LastModFileDate ;
+    DWORD Crc32 ;
+    DWORD CompressedSize ;
+    DWORD UncompressedSize ;
+    WORD  FileNameLength ;
+    WORD  ExtraFieldLength ;
+    WORD  FileCommentLength ;
+    WORD  DiskNumberStart ;
+    WORD  InternalFileAttributes ;
+    DWORD ExternalFileAttributes ;
+    DWORD RelativeOffsetOfLocalHeader ;
+    char  FileName[FileNameLength] ;
+    char  ExtraField[ExtraFieldLength] ; //variable length
+    char  FileComment[FileCommentLength] ; // variable length
+} ;
+</code></pre>
+
+<p>Now you can see theres a offset for local file header or LFH. Basically our compressed or stored data is inside this header (LFH). It looks like this :</p>
+
+<pre><code class="language-c">struct LocalFileHeader
+{
+    // signature for the LFH is : 0x04034b50 
+    WORD VersionNeededToExtract ;
+    WORD GeneralPurposeBitFlag ;
+    WORD CompressionMethod ;
+    WORD LastModFileTime ;
+    WORD LastModFileDate ;
+    DWORD Crc32 ;
+    DWORD CompressedSize ;
+    DWORD UncompressedSize ;
+    WORD  FileNameLength ;
+    WORD  ExtraFieldLength ;
+    char  FileName[FileNameLength] ;
+    char  ExtraField[ExtraFieldLength] ;
+    char  FileData[CompressedSize] ;
+} ;
+</code></pre>
+
+<p>Hush! Such a weird structure. now lets talk about</p>
+
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="http://nk521.github.io/assets/main.js"></script>
+<script src="http://nk521.github.io/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
