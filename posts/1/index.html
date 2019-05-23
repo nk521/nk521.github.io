@@ -217,7 +217,7 @@ ZIPs! They are everywhere. Not only .zip but .xlsx, .docx, .pptx, ODF files, .ja
 } ;
 </code></pre>
 
-<p>Now you can see theres a offset for local file header or LFH. Basically our compressed or stored data is inside this header (LFH). It looks like this :</p>
+<p>Now you can see that there&rsquo;s a offset for local file header or LFH. Basically our compressed or stored data is inside this header (LFH). It looks like this :</p>
 
 <pre><code class="language-c">struct LocalFileHeader
 {
@@ -238,7 +238,30 @@ ZIPs! They are everywhere. Not only .zip but .xlsx, .docx, .pptx, ODF files, .ja
 } ;
 </code></pre>
 
-<p>Hush! Such a weird structure. now lets talk about</p>
+<p>Hush! Such a weird structure. This is how it looks when you view a ZIP in a hex editor :</p>
+
+<p><img src="zip_hex.jpg" alt="" /></p>
+
+<p>Notice that here the file name (marked green) in LFH (marked blue from 0x00 to 0x29) is 0x41.txt and the file data (marked black) is &ldquo;test&rdquo;. The CDH is from 0x2A to 0x5F and the EoCDH is from 0x60 to 0x75.</p>
+
+<blockquote>
+<p>If you look close then you can see that in CDH you can define external attributes. Now according to APPNOTE : <code>The mapping of the external attributes is host-system dependent (see 'version made by').  For MS-DOS, the low order byte is the MS-DOS directory attribute byte.  If input came from standard input, this field is set to zero.</code> and the current mappings are :</p>
+
+<pre><code class="language-raw">0 - MS-DOS and OS/2 (FAT / VFAT / FAT32 file systems)
+1 - Amiga                     2 - OpenVMS
+3 - UNIX                      4 - VM/CMS
+5 - Atari ST                  6 - OS/2 H.P.F.S.
+7 - Macintosh                 8 - Z-System
+9 - CP/M                     10 - Windows NTFS
+11 - MVS (OS/390 - Z/OS)      12 - VSE
+13 - Acorn Risc               14 - VFAT
+15 - alternate MVS            16 - BeOS
+17 - Tandem                   18 - OS/400
+19 - OS X (Darwin)            20 thru 255 - unused
+</code></pre>
+</blockquote>
+
+<p>Now you can use some good HEX editors like <a href="www.hexworkshop.com">HEX Workshop</a> to change this external attribute and it&rsquo;ll act like a stenography technique :D</p>
 
   </div>
   
