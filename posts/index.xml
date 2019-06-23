@@ -6,10 +6,21 @@
     <description>Recent content in Posts on 0x41</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 May 2019 21:49:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 13 Jun 2019 14:49:00 +0530</lastBuildDate>
     
 	<atom:link href="https://nk521.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ZIPs 2/n</title>
+      <link>https://nk521.github.io/posts/2/</link>
+      <pubDate>Thu, 13 Jun 2019 14:49:00 +0530</pubDate>
+      
+      <guid>https://nk521.github.io/posts/2/</guid>
+      <description>If you just hopped to this without reading the first part then HOL&amp;rsquo; UP and read the first blog.
+ Some basic tricks * Messing up external attributes Some basic MS-DOS attributes are:
+   Attribute Bits     READ ONLY 00000001   HIDDEN 00000010   SYSTEM 00000100   DIRECTORY 00010000   ARCHIVE 00100000    now if you have a file compressed inside a ZIP then you can simply change External File Attributes in CDH to say 20 or 0b00010010 and the windows zip parser will parse that file as a hidden directory.</description>
+    </item>
     
     <item>
       <title>ZIPs 1/n</title>
@@ -17,10 +28,10 @@
       <pubDate>Wed, 22 May 2019 21:49:00 +0530</pubDate>
       
       <guid>https://nk521.github.io/posts/1/</guid>
-      <description>ZIPs are shit period
+      <description>What&amp;rsquo;s a ZIP?  ZIPs are shit period
  According to wikipedia : ZIP is an archive file format that supports lossless data compression. A ZIP file may contain one or more files or directories that may have been compressed.
 Official specification of ZIP format by PKWARE : APPNOTE.TXT
-ZIPs! They are everywhere. Not only .zip but .xlsx, .docx, .pptx, ODF files, .jar, .apk, python .whl and .egg files, flash files, some .dat files of games, .</description>
+ZIPs! They are everywhere. Not only .zip but .xlsx, .docx, .pptx, ODF files, .jar, .apk, python .whl and .egg files, flash files, some .</description>
     </item>
     
   </channel>

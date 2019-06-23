@@ -1,0 +1,249 @@
+<html lang="en">
+<head>
+  
+    <title>ZIPs 2/n :: 0x41 — Another tech blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="If you just hopped to this without reading the first part then HOL&amp;rsquo; UP and read the first blog.
+ Some basic tricks * Messing up external attributes Some basic MS-DOS attributes are:
+   Attribute Bits     READ ONLY 00000001   HIDDEN 00000010   SYSTEM 00000100   DIRECTORY 00010000   ARCHIVE 00100000    now if you have a file compressed inside a ZIP then you can simply change External File Attributes in CDH to say 20 or 0b00010010 and the windows zip parser will parse that file as a hidden directory."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://nk521.github.io/posts/2/" />
+<base href="/">
+
+<link rel="stylesheet" href="https://nk521.github.io/assets/style.css" type="text/css">
+
+  <link rel="stylesheet" href="https://nk521.github.io/assets/blue.css" type="text/css">
+
+
+
+<link rel="stylesheet" href="https://nk521.github.io/style.css" type="text/css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://nk521.github.io/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://nk521.github.io/img/favicon/blue.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="ZIPs 2/n :: 0x41 — Another tech blog" />
+<meta name="twitter:description" content="If you just hopped to this without reading the first part then HOL&amp;rsquo; UP and read the first blog.
+ Some basic tricks * Messing up external attributes Some basic MS-DOS attributes are:
+   Attribute Bits     READ ONLY 00000001   HIDDEN 00000010   SYSTEM 00000100   DIRECTORY 00010000   ARCHIVE 00100000    now if you have a file compressed inside a ZIP then you can simply change External File Attributes in CDH to say 20 or 0b00010010 and the windows zip parser will parse that file as a hidden directory." />
+<meta name="twitter:site" content="https://nk521.github.io/" />
+<meta name="twitter:creator" content="Mason" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="ZIPs 2/n :: 0x41 — Another tech blog">
+<meta property="og:description" content="If you just hopped to this without reading the first part then HOL&amp;rsquo; UP and read the first blog.
+ Some basic tricks * Messing up external attributes Some basic MS-DOS attributes are:
+   Attribute Bits     READ ONLY 00000001   HIDDEN 00000010   SYSTEM 00000100   DIRECTORY 00010000   ARCHIVE 00100000    now if you have a file compressed inside a ZIP then you can simply change External File Attributes in CDH to say 20 or 0b00010010 and the windows zip parser will parse that file as a hidden directory." />
+<meta property="og:url" content="https://nk521.github.io/posts/2/" />
+<meta property="og:site_name" content="ZIPs 2/n" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2019-06-13 14:49:00 &#43;0530 DST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    0x41
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">some BS</a></li>
+        
+      
+        
+          <li><a href="/about">whoami</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">some BS</a></li>
+      
+    
+      
+        <li><a href="/about">whoami</a></li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://nk521.github.io/posts/2/">ZIPs 2/n</a></h1>
+  <div class="post-meta">
+    <span class="post-date">
+      Thursday, June 13, 2019
+    </span>
+    
+    <span class="post-author">::
+      Mason
+    </span>
+    
+  </div>
+
+  
+
+  
+
+  <div class="post-content">
+    
+
+<blockquote>
+<p>If you just hopped to this without reading the first part then HOL&rsquo; UP and read the first blog.</p>
+</blockquote>
+
+<h1 id="some-basic-tricks">Some basic tricks</h1>
+
+<h1 id="messing-up-external-attributes">* Messing up external attributes</h1>
+
+<p>Some basic MS-DOS attributes are:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Attribute</th>
+<th align="center">Bits</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">READ ONLY</td>
+<td align="center">00000001</td>
+</tr>
+
+<tr>
+<td align="center">HIDDEN</td>
+<td align="center">00000010</td>
+</tr>
+
+<tr>
+<td align="center">SYSTEM</td>
+<td align="center">00000100</td>
+</tr>
+
+<tr>
+<td align="center">DIRECTORY</td>
+<td align="center">00010000</td>
+</tr>
+
+<tr>
+<td align="center">ARCHIVE</td>
+<td align="center">00100000</td>
+</tr>
+</tbody>
+</table>
+
+<p>now if you have a file compressed inside a ZIP then you can simply change <code>External File Attributes</code> in CDH to say 20 or 0b00010010 and the windows zip parser will parse that file as a hidden directory. But yeah you cannot just fool every parser using this.</p>
+
+<h1 id="polyglots-and-other-ways-to-combine-zips-with-other-files">* Polyglots and other ways to combine ZIPs with other files</h1>
+
+<p>PKZIP doesn&rsquo;t enforce you to start the LFH at offset 0x00. Yes, that means that the ZIP can be anywhere in a binary blob and that will be a valid zip, if and only if it follows some rules :</p>
+
+<ul>
+<li>All the offsets which are stored inside the LFH, CDH &amp; EoCDH should be correct.</li>
+<li>You can prepend as much data as you can. There&rsquo;s literally zero problem with that but this is not true for</li>
+<li></li>
+</ul>
+
+  </div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      
+      <span class="button next">
+        <a href="https://nk521.github.io/posts/1/">
+          <span class="button__text">ZIPs 1/n</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://nk521.github.io/assets/main.js"></script>
+<script src="https://nk521.github.io/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
