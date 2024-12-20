@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nkmason.dev/sitemap-index.xml
